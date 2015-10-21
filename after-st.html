@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>::after</title>
+        <link href='https://fonts.googleapis.com/css?family=Bree+Serif&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Fjalla+One&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <style>
+            html, body { font-family: sans-serif; font-size: 1.2em; color: #444; }
+            body{
+                background: url("kattekrab_Spring_Blossom.svg");
+                background-size: cover;
+            }
+            ul.todo li.checked::after{
+                content:"";
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                background-image:url(check.png);
+                margin-left: 10px;
+                margin-top: 3px;
+            }
+            .bubble {
+                color: white;
+                background-color: #777;
+                background-image: linear-gradient(0deg, #777, #aaa);
+                padding: 60px;
+                width: 600px;
+                margin: 0 auto;
+                text-align: center;
+                border-radius: 40px;
+                position: relative;
+            }
+            
+            .bubble::before {
+                content: "";
+                width: 60px;
+                height: 60px;
+                background-color: #777;
+                border-radius: 100px;
+                position: absolute;
+                bottom: -30px;
+                left: 40px;
+                z-index: -10;
+            }
+            
+            .bubble::after {
+                content: "";
+                width: 60px;
+                height: 60px;
+                background-color: white;
+                border-radius: 100px;
+                position: absolute;
+                bottom: -40px;
+                left: 60px;
+                z-index: -5;
+            }
+            input{
+                width: 385px
+                color: red;
+            }
+            h1{
+              font-size: 2.5em;    
+              font-family: font-family: 'Bree Serif', serif;
+            }
+            h2{
+                font-size: 1.5em;  
+                font-family: 'Fjalla One', sans-serif;  
+            }
+            .svg-vector {
+                position: relative;
+                top: -152px;
+                left: -185px;
+                float:right;
+               height: 150px;
+                width: 200px;
+                margin-bottom: 800px;
+                
+            }
+            h1::first-letter{
+                color: blueviolet;
+                font-size: 200%;
+                letter-spacing: 0px;
+            }
+            #infield{
+                font-weight: bold;
+            }
+        </style>
+       
+    </head>
+
+    <body>
+        <h1>The ::after Pseudo Element</h1>
+        <img class="svg-vector" src="sumowrestlerhandout.svg">
+        <h3>To-Do List</h3>
+        <ul class="todo">
+            
+        </ul>
+        
+        <div class="bubble">
+            <input id="infield" type ="text" >
+            <button id= "button1">Add to List</button>
+        </div>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="main.js"></script> 
+    </body>
+</html>

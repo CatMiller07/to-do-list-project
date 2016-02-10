@@ -16,9 +16,16 @@ $(document).ready(function(){
         $(this).toggleClass("checked");
     };
     
+	function rmvElement(){
+		$(this).children("ul").remove();
+	}
+	
     $(".bubble").find("#button1").click(addToList);
-              
+     
+	$(document).on("dblclick", "li",rmvElement);
+	
     $(document).on("click","li",handleClick);
+	
      //$(document).on("click",".todo li",handleClick);
          //alert("here i am");
      

@@ -1,12 +1,12 @@
 $(document).ready(function(){
     var itemID =0;
     var quit = false; 
-    if ($(".todo").val =='') {
-        
-    }
+    var myToDo = document.getElementById('myList');
+    
+    
     function addToList(){
         var myText ="";
-        myText = "<li>"+$("#infield").val()+"</li>" ; 
+        myText = "<li>"+"*"+$("#infield").val()+"</li>" ; 
         $(".todo").append(myText);
         localStorage.setItem(itemID++,$('#infield').val());
         $("#infield").val(""); 
@@ -21,9 +21,26 @@ $(document).ready(function(){
 	}
 	
     $(".bubble").find("#button1").click(addToList);
+<<<<<<< HEAD
      
 	$(document).on("dblclick", "li",rmvElement);
 	
+=======
+    ;
+     $(".bubble").keypress(function(evt){
+           if (evt.which === 13) {
+                addToList();
+           };
+     });
+    
+    //Clear Action Item field
+    $(".bubble").find("#button2").click(function(){
+         // $(".todo").empty();
+         myToDo.innerHTML = " ";
+        
+    });
+              
+>>>>>>> origin/master
     $(document).on("click","li",handleClick);
 	
      //$(document).on("click",".todo li",handleClick);
